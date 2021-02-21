@@ -1,2 +1,2 @@
 # temple
-Proof of concept Rails powered Church website with content management
+Proof of concept Church website with content management
