@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Announcement from "./Announcement";
+import Announcement from "./components/announcement/Announcement";
 
 function App() {
   return (
