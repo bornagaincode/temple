@@ -10,12 +10,16 @@ interface IProps {
 function AnnouncementEditor(props: IProps): JSX.Element {
   const input = useRef<HTMLInputElement>(null);
   const { setAnnouncementText, setIsFocused } = props;
-  const [text, setText] = useState(props.text);
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
+  const [inputText, setInputText] = useState(props.text);
+  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputText(event.target.value);
     setAnnouncementText(event.target.value);
   };
-
+  const onKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Escape" || event.key === "Enter") {
+      input.current?.blur();
+    }
+  };
   const onFocusHandler = () => setIsFocused(true);
   const onBlurHandler = () => setIsFocused(false);
 
@@ -24,8 +28,9 @@ function AnnouncementEditor(props: IProps): JSX.Element {
       ref={input}
       id="AnnouncementEditor"
       type="text"
-      value={text}
-      onChange={handleChange}
+      value={inputText}
+      onKeyDown={onKeyDownHandler}
+      onChange={onChangeHandler}
       onFocus={onFocusHandler}
       onBlur={onBlurHandler}
     />
