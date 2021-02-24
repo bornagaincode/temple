@@ -1,29 +1,50 @@
-import React, { useState, useEffect } from "react";
-import "./Announcement.css";
+import React, { useState, useRef, useEffect } from "react";
 import AnnouncementEditor from "./AnnouncementEditor";
+import AnnouncementText from "./AnnouncementText";
+import "./Announcement.css";
 
 function Announcement(): JSX.Element {
-  const [editMode, setEditMode] = useState(false);
+  const root = useRef<HTMLDivElement>(null);
   const [text, setText] = useState(
     "Our Church honors all possible COVID-19 precautions for your safety."
   );
-  const setEditModeHandler = () => setEditMode(true);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const onMouseEnterHandler = () => setIsEditMode(true);
+  const onMouseLeaveHandler = () => (isFocused ? false : setIsEditMode(false));
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const listenForOutsideClicks = (e: MouseEvent) => {
+      if (root.current?.contains(e.target as Node)) {
+        return;
+      }
+
+      setIsEditMode(false);
+    };
+
+    document.body.addEventListener("click", listenForOutsideClicks);
+
+    return () => {
+      document.body.removeEventListener("click", listenForOutsideClicks);
+    };
+  }, []);
 
   return (
-    <div className="Announcement">
-      <div className="Announcement--content" onClick={setEditModeHandler}>
-        {!editMode ? (
-          text
-        ) : (
-          <AnnouncementEditor
-            text={text}
-            setAnnouncementText={setText}
-            setAnnouncementEditMode={setEditMode}
-          />
-        )}
-      </div>
+    <div
+      ref={root}
+      id="Announcement"
+      onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
+    >
+      {isEditMode ? (
+        <AnnouncementEditor
+          text={text}
+          setAnnouncementText={setText}
+          setIsFocused={setIsFocused}
+        />
+      ) : (
+        <AnnouncementText text={text} />
+      )}
     </div>
   );
 }
