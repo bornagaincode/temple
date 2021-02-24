@@ -14,13 +14,8 @@ function Announcement(): JSX.Element {
   const onMouseLeaveHandler = () => (isFocused ? false : setIsEditMode(false));
 
   useEffect(() => {
-    const listenForOutsideClicks = (e: MouseEvent) => {
-      if (root.current?.contains(e.target as Node)) {
-        return;
-      }
-
-      setIsEditMode(false);
-    };
+    const listenForOutsideClicks = (e: MouseEvent) =>
+      root.current?.contains(e.target as Node) ? null : setIsEditMode(false);
 
     document.body.addEventListener("click", listenForOutsideClicks);
 
