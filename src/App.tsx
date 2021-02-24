@@ -1,12 +1,13 @@
 import React from "react";
-import "./App.css";
 import Announcement from "./components/announcement/Announcement";
+import Header from "./components/header/Header";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Announcement />
-      <header className="App-header">Blank Application</header>
+      <Header />
     </div>
   );
 }
