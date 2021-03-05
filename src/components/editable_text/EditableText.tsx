@@ -1,23 +1,17 @@
 import React from "react";
-import {
-  ContentState,
-  DraftEditorCommand,
-  Editor,
-  EditorState,
-  RichUtils,
-} from "draft-js";
+import { DraftEditorCommand, Editor, EditorState, RichUtils } from "draft-js";
+import { stateFromHTML } from "draft-js-import-html";
 import "./EditableText.css";
 
 interface IProps {
-  placeholder?: string;
+  placeholder: string;
+  allowNewLine?: boolean;
 }
 
 function EditableText(props: IProps): JSX.Element {
-  const { placeholder } = props;
+  const { placeholder, allowNewLine } = props;
   const [editorState, setEditorState] = React.useState(() =>
-    EditorState.createWithContent(
-      ContentState.createFromText(placeholder || "Editable text")
-    )
+    EditorState.createWithContent(stateFromHTML(placeholder))
   );
   const handleKeyCommand = (
     command: DraftEditorCommand,
@@ -27,6 +21,9 @@ function EditableText(props: IProps): JSX.Element {
 
     return newState ? (setEditorState(newState), "handled") : "not-handled";
   };
+  const returnHandler = (_e: React.KeyboardEvent, editorState: EditorState) => {
+    return allowNewLine ? "not-handled" : "handled";
+  };
 
   return (
     <div className="EditableText">
@@ -34,6 +31,7 @@ function EditableText(props: IProps): JSX.Element {
         editorState={editorState}
         onChange={setEditorState}
         handleKeyCommand={handleKeyCommand}
+        handleReturn={returnHandler}
       />
     </div>
   );
