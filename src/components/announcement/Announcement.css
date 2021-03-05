@@ -1,4 +1,12 @@
 #Announcement {
   padding: 10px;
-  background-color: #22B9D4;
+  background-color: #14b3cf;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Roboto",
+    sans-serif;
+  border: none;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
 }
