@@ -18,11 +18,12 @@
 }
 
 #Hero--cta {
-  background-color: #FFD927;
+  background-color: #ffd927;
   border: 0px;
   font-size: 24px;
   font-weight: 900;
-  font-family: "Raleway", -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Roboto",
+    sans-serif;
   padding: 20px 60px;
   outline: none;
   cursor: pointer;
@@ -35,4 +36,5 @@
 
 #Hero--tip {
   font-size: 16px;
+  text-align: center;
 }

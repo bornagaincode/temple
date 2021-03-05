@@ -1,4 +1,5 @@
 import React from "react";
+import EditableText from "../editable_text/EditableText";
 import "./Hero.css";
 
 function Hero(): JSX.Element {
@@ -13,9 +14,13 @@ function Hero(): JSX.Element {
       <button id="Hero--cta" className="btn btn-lg btn-primary">
         Join us on Sunday
       </button>
-      <p id="Hero--tip">Learn about our services and get directions</p>
+      <div id="Hero--tip">
+        <EditableText placeholder="Learn about our services and get directions" />
+      </div>
     </section>
   );
 }
+
+// Learn about our services and get directions
 
 export default Hero;
