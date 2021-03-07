@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@draft-js-plugins/anchor": "^4.1.2",
+    "@draft-js-plugins/editor": "^4.1.0",
+    "@draft-js-plugins/inline-toolbar": "^4.1.1",
     "@fontsource/raleway": "^4.2.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -14,6 +17,8 @@
     "@types/react-dom": "^17.0.0",
     "draft-js": "^0.11.7",
     "draft-js-import-html": "^1.4.1",
+    "install": "^0.13.0",
+    "npm": "^7.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
