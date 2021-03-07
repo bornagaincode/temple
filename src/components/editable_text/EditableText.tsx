@@ -6,10 +6,11 @@ import "./EditableText.css";
 interface IProps {
   placeholder: string;
   allowNewLine?: boolean;
+  enableToolbar?: boolean;
 }
 
 function EditableText(props: IProps): JSX.Element {
-  const { placeholder, allowNewLine } = props;
+  const { placeholder, allowNewLine, enableToolbar } = props;
   const [editorState, setEditorState] = React.useState(() =>
     EditorState.createWithContent(stateFromHTML(placeholder))
   );
