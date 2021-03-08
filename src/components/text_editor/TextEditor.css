@@ -1,3 +1,7 @@
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
 @keyframes medium-editor-image-loading {
   0% {
     transform: scale(0);

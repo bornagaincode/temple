@@ -1,13 +1,13 @@
-.TextFrame {
-  outline: 2px dotted #ff4545;
+.TextFrame:hover {
+  outline: 1px dotted #00c5c5;
 }
 
 .TextFrame--center {
   margin: 0 auto;
 }
 
-.TextFrame--handle {
-  background-color: #ff4545;
+.TextFrame:hover .TextFrame--handle {
+  background-color: #00c5c5;
   height: 10px;
   width: 10px;
   display: block;

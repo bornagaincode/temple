@@ -4,32 +4,42 @@ import MediumEditor from "medium-editor";
 import "./TextEditor.css";
 
 interface ITextProps {
-  children: JSX.Element;
+  content: string;
   className?: string;
+  width?: number;
+  maxWidth?: number;
+  minWidth?: number;
 }
 
 function TextEditor(props: ITextProps): JSX.Element {
-  const { children } = props;
+  const { content, width, maxWidth, minWidth } = props;
   const root = useRef(null);
 
-  // Medium
   useEffect(() => {
+    // Instantiate editor
     const editor = new MediumEditor(root.current!, {
       toolbar: {
         buttons: ["bold", "italic", "underline", "anchor"],
       },
     });
 
+    // Initialize with HTML content
+    editor.setContent(content);
+
+    // Save changes
     editor.subscribe("editableInput", (event: Event) => {
-      // Post to server
+      // Post to server or update state here
     });
   });
 
   return (
-    <TextFrame width={800} maxWidth={1200} minWidth={600} align={"center"}>
-      <div ref={root} className="TextEditor">
-        {children}
-      </div>
+    <TextFrame
+      width={width || 800}
+      minWidth={500 || minWidth}
+      maxWidth={1400 || maxWidth}
+      align={"center"}
+    >
+      <div ref={root} className="TextEditor"></div>
     </TextFrame>
   );
 }
