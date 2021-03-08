@@ -251,7 +251,7 @@
 
 .medium-editor-element {
   word-wrap: break-word;
-  min-height: 30px;
+  min-height: 16px;
 }
 
 .medium-editor-element img {
