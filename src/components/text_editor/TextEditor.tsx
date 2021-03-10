@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import TextFrame from "./TextFrame";
 import MediumEditor from "medium-editor";
-import "./TextEditor.css";
+import "./TextEditor.scss";
 
 interface ITextProps {
   content: string;
