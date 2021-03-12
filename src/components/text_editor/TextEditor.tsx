@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import TextFrame from "./TextFrame";
 import MediumEditor from "medium-editor";
-import "./TextEditor.css";
+import "./TextEditor.scss";
 
 interface ITextProps {
   content: string;
@@ -19,7 +19,23 @@ function TextEditor(props: ITextProps): JSX.Element {
     // Instantiate editor
     const editor = new MediumEditor(root.current!, {
       toolbar: {
-        buttons: ["bold", "italic", "underline", "anchor"],
+        buttons: [
+          "bold",
+          "italic",
+          "underline",
+          { name: "anchor", contentDefault: '<span class="icon-link"></span>' },
+        ],
+        diffLeft: 0,
+        diffTop: -10,
+      },
+      anchor: {
+        linkValidation: true,
+        placeholderText: "Paste or type a link here...",
+        targetCheckbox: false,
+        targetCheckboxText: "Open in new window",
+      },
+      placeholder: {
+        text: "Click to edit",
       },
     });
 

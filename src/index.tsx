@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "@fontsource/raleway/latin.css";
 import "./index.css";
+import "./icons.scss";
 
 ReactDOM.render(
   <React.StrictMode>
