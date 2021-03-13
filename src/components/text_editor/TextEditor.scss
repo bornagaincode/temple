@@ -258,7 +258,7 @@ $z-toolbar: 2000 !default;
 // contenteditable rules
 .medium-editor-element {
   word-wrap: break-word;
-  min-height: 30px;
+  min-height: 16px;
 
   img {
     max-width: 100%;
@@ -284,7 +284,7 @@ $medium-editor-border-radius: 10px;
 
 // theme rules
 .medium-toolbar-arrow-under:after {
-  border-color: #EEEEEE transparent transparent transparent;
+  border-color: #eeeeee transparent transparent transparent;
   top: $medium-editor-button-size;
 }
 
@@ -297,13 +297,23 @@ $medium-editor-border-radius: 10px;
   background-color: $medium-editor-bgcolor;
   border: 0px solid transparent;
   border-radius: $medium-editor-border-radius;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25), 0 4px 20px 0 rgba(0,0,0,0.25);
-  background-image: linear-gradient(179deg, #FFFFFF 0%, #DDDDDD 25%, #F1F1F1 100%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(
+    179deg,
+    #ffffff 0%,
+    #dddddd 25%,
+    #f1f1f1 100%
+  );
 
   li {
     button {
       background-color: $medium-editor-bgcolor;
-      background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 20%, #EEEEEE 100%);
+      background-image: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffffff 20%,
+        #eeeeee 100%
+      );
       border: 0;
       color: #444;
       height: $medium-editor-button-size;
@@ -313,11 +323,16 @@ $medium-editor-border-radius: 10px;
 
       &:hover {
         background-color: #eee;
-        background-image: linear-gradient(180deg, #FFFFFF 0%, #F0F0F0 24%, #F1F1F1 100%);
+        background-image: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #f0f0f0 24%,
+          #f1f1f1 100%
+        );
         color: 000;
       }
     }
-    
+
     &:last-child button {
       margin-right: 0;
     }
@@ -334,19 +349,34 @@ $medium-editor-border-radius: 10px;
 
     .medium-editor-button-active {
       background-color: #ccc;
-      background-image: linear-gradient(180deg, #FFFFFF 0%, #E9E9E9 24%, #F1F1F1 100%);
+      background-image: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #e9e9e9 24%,
+        #f1f1f1 100%
+      );
       color: #333;
     }
   }
 }
 
 .medium-editor-toolbar-form {
-  background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 74%, #EEEEEE 100%);
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffffff 74%,
+    #eeeeee 100%
+  );
   border-radius: $medium-editor-border-radius;
   color: #999;
 
   .medium-editor-toolbar-input {
-    background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 74%, #EEEEEE 100%);
+    background-image: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #ffffff 74%,
+      #eeeeee 100%
+    );
     box-sizing: border-box;
     color: #333;
     height: $medium-editor-button-size;
@@ -366,7 +396,12 @@ $medium-editor-border-radius: 10px;
 }
 
 .medium-editor-toolbar-anchor-preview {
-  background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 74%, #EEEEEE 100%);
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffffff 74%,
+    #eeeeee 100%
+  );
   padding: 4px 8px;
   border-radius: $medium-editor-border-radius;
   color: #333;
@@ -382,6 +417,6 @@ $medium-editor-border-radius: 10px;
 }
 
 .medium-editor-anchor-preview {
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25), 0 4px 20px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 4px 20px 0 rgba(0, 0, 0, 0.25);
   border-radius: $medium-editor-border-radius;
 }
