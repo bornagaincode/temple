@@ -1,0 +1,24 @@
+.slider .animated {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.slider .animated-out {
+  z-index: 1;
+}
+
+.slider .fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
