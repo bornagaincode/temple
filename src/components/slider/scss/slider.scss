@@ -61,19 +61,18 @@ $play-btn-size: 32px !default;
 .slider__next-btn {
   display: inline-block;
   box-sizing: border-box;
-  width: 50%;
-  padding: 10px 5px;
-
-  [data-area] {
-    &::after {
-      position: relative;
-      content: attr(data-area);
-      text-transform: capitalize;
-    }
-  }
+  width: 60px;
+  position: absolute;
+  top: 43%;
 }
 
 .slider__prev-btn {
+  left: -120px;
+  text-align: left;
+}
+
+.slider__next-btn {
+  right: -120px;
   text-align: right;
 }
 

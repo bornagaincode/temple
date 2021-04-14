@@ -55,7 +55,7 @@ function PageSlider(): JSX.Element {
           mouseTracking
           items={items}
           responsive={responsive}
-          disableButtonsControls={true}
+          disableButtonsControls={false}
         />
       </div>
     </section>

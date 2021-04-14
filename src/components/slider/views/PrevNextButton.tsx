@@ -1,6 +1,8 @@
 import React from "react";
 import * as Utils from "../utils";
 import { Classnames, Modifiers } from "../types";
+import back_svg from "../svg/arrow-left.svg";
+import next_svg from "../svg/arrow-right.svg";
 
 export const PrevNextButton = ({
   name,
@@ -26,7 +28,7 @@ export const PrevNextButton = ({
   }
 
   const isPreviews = name === "prev";
-  const ariaValue = isPreviews ? "<" : ">";
+  const ariaValue = isPreviews ? back_svg : next_svg;
   const buttonClasses = isPreviews
     ? Classnames.BUTTON_PREV
     : Classnames.BUTTON_NEXT;
@@ -46,7 +48,7 @@ export const PrevNextButton = ({
     <div className={buttonClasses}>
       <div className={buttonWrapperClasses}>
         <p className={classnames} onClick={onClick}>
-          <span data-area={ariaValue} />
+          <img src={ariaValue} />
         </p>
       </div>
     </div>
