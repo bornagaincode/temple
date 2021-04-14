@@ -18,8 +18,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
+    "noImplicitAny": false, // TODO: get rid of this
+    "noImplicitThis": false, // TODO: get rid of this
     "jsx": "react-jsx"
   },
   "include": [
