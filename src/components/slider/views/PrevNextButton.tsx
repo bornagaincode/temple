@@ -48,7 +48,7 @@ export const PrevNextButton = ({
     <div className={buttonClasses}>
       <div className={buttonWrapperClasses}>
         <p className={classnames} onClick={onClick}>
-          <img src={ariaValue} />
+          <img src={ariaValue} alt="controls" />
         </p>
       </div>
     </div>
